@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body{
+            background: gray;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .imagem-container {
+            width: 225px; /* Largura desejada do contêiner */
+            height: 300px; /* Altura desejada do contêiner */
+            background-image: url(/MahjongTiles/Export/Black/Back.png);
+            /* background: url(/MahjongTiles/Export/Black/Back.png) no-repeat center center; */
+            background-size: cover;
+            position: relative;
+            overflow: hidden; /* Para garantir que o conteúdo da imagem não ultrapasse os limites do contêiner */
+        }
+        .imagem-container img {
+            max-width: 90%; /* Garante que o conteúdo da imagem não ultrapasse a largura do contêiner */
+            max-height: 90%; /* Garante que o conteúdo da imagem não ultrapasse a altura do contêiner */
+            position: absolute;
+            top: 50%; /* Posiciona a imagem 50% do topo do contêiner */
+            left: 50%; /* Posiciona a imagem 50% da esquerda do contêiner */
+            transform: translate(-50%, -50%); /* Move a imagem de volta pela metade da sua própria largura e altura para centralizá-la */
+        }
+        #alfredo
+        {
+            background-size: contain;
+            width: 225px; /* Largura desejada do contêiner */
+            height: 300px; /* Altura desejada do contêiner */
+            background-image: url(/MahjongTiles/Export/Black/Back.png);
+        }
+    </style>
+</head>
+<body>
+
+<div class="imagem-container">
+    <img>
+</div>
+
+<img id="alfredo" src="/MahjongTiles/Black/Pin9.svg">
+
+</body>
+</html>

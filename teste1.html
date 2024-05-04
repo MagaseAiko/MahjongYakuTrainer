@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alterar Cor com JavaScript</title>
+<style>
+    /* Estilo para a classe vermelho */
+    .vermelho {
+        color: red;
+    }
+</style>
+</head>
+<body>
+
+<!-- Div onde os elementos serão adicionados -->
+<div id="minhaDiv">
+    <!-- Elementos existentes -->
+    <p>Este é um elemento existente.</p>
+</div>
+
+<script>
+// Função para adicionar novos elementos com cores diferentes
+function adicionarElemento(cor) {
+    // Criando um novo elemento de parágrafo
+    var novoElemento = document.createElement("p");
+    
+    // Adicionando texto ao novo elemento
+    novoElemento.innerHTML = "Novo elemento adicionado";
+    
+    // Adicionando uma classe ao novo elemento com base na cor recebida como argumento
+    novoElemento.classList.add(cor);
+    
+    // Adicionando o novo elemento à div
+    document.getElementById("minhaDiv").appendChild(novoElemento);
+}
+
+// Exemplo: adicionando um elemento vermelho
+adicionarElemento("vermelho");
+</script>
+
+</body>
+</html>

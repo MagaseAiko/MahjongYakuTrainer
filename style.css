@@ -1,0 +1,879 @@
+/*       */
+/* Cores */
+/*       */
+
+:root {
+    --cor-preta: black;
+    --cor-branca: white;
+    --cor-1: #29323c;
+    --cor-2: #434343;
+    --cor-3: black;
+    --cor-4: white;
+    --cor-5: #c9031a;
+}
+/*
+html[data-theme='BL'] {
+    --cor-preta: black;
+    --cor-branca: white;
+    --cor-1: #29323c;
+    --cor-2: #c5c5c52d;
+    --cor-3: white;
+    --cor-4: #ffb300;
+    --cor-5: black;
+    --cor-6: #D80032;
+    --cor-7: #EE7A17;
+    --cor-8: #0370A9;
+    --cor-9: #51BD50;
+    --cor-10: #D7185E;
+    --cor-11: #AE74B1;
+    --cor-12: green;
+    --cor-13: red;
+}
+
+html[data-theme='WT'] {
+    --cor-preta: black;
+    --cor-branca: white;
+    --cor-1: #29323c;
+    --cor-2: #c5c5c52d;
+    --cor-3: black;
+    --cor-4: #D80032;
+    --cor-5: white;
+    --cor-6: #ffb300;
+    --cor-7: #EE7A17;
+    --cor-8: #0370A9;
+    --cor-9: #51BD50;
+    --cor-10: #D7185E;
+    --cor-11: #AE74B1;
+    --cor-12: green;
+    --cor-13: red;
+}*/
+
+html[data-theme='BL'] {
+    --cor-preta: black;
+    --cor-branca: white;
+    --cor-1: #000000;
+    --cor-2: #99999915;
+    --cor-3: white;
+    --cor-4: #ffb300;
+    --cor-5: black;
+    --cor-6: #D80032;
+    --cor-7: #EE7A17;
+    --cor-8: #0370A9;
+    --cor-9: #51BD50;
+    --cor-10: #D7185E;
+    --cor-11: #AE74B1;
+    --cor-12: #08b42d;
+    --cor-13: #aa0202cc;
+    --cor-14: #161616;
+    --cor-15: #ffb300;
+}
+
+html[data-theme='WT'] {
+    --cor-preta: black;
+    --cor-branca: white;
+    --cor-1: #b10538;
+    --cor-2: #99999915;
+    --cor-3: black;
+    --cor-4: #D80032;
+    --cor-5: white;
+    --cor-6: #ffb300;
+    --cor-7: #EE7A17;
+    --cor-8: #0370A9;
+    --cor-9: #51BD50;
+    --cor-10: #D7185E;
+    --cor-11: #AE74B1;
+    --cor-12: #08b42d;
+    --cor-13: #eb0552;
+    --cor-14: #ffffff;
+    --cor-15: #ffffff;
+}
+
+/*       */
+/* Style */
+/*       */
+
+* {
+    font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    /* background-image: url(/teste.jpg);
+    background-size: cover; */
+    
+    /* background-image: linear-gradient(10deg, var(--cor-preta) 0%, var(--cor-4) 110%);  */
+    background-color: var(--cor-1);
+}
+
+/*       */
+/* Div's */
+/*       */
+
+#Div_1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 99%;
+    height: 99%;
+    /*border: 2px solid var(--cor-5);*/
+}
+
+#Div_2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+#Div_3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 30%;
+    /*border: 2px solid var(--cor-5);*/
+}
+
+#Div_4 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 20%;
+    border-radius: 10px;
+}
+
+#Div_5 {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40%;
+    /*border: 2px solid var(--cor-5);*/
+}
+
+#Div_6 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 5%;
+    /*border: 2px solid var(--cor-5);*/
+}
+
+#Div_7 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    /*border: 2px solid var(--cor-5);*/
+}
+
+#Div_8 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+#Div_9 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    /*border: 2px solid var(--cor-5);*/
+}
+
+#Div_10 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+    /*border: 2px solid var(--cor-5);*/
+}
+
+#Div_11 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    /*border: 2px solid var(--cor-5);*/
+}
+
+#Div_12 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    /*border: 2px solid var(--cor-5);*/
+}
+
+#Div_13 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 100%;
+    /*border: 2px solid var(--cor-5);*/
+}
+
+#Div_14 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    height: 100%;
+    /*border: 2px solid var(--cor-5);*/
+}
+
+#Div_15 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 20%;
+    height: 100%;
+    /*border: 2px solid var(--cor-5);*/
+}
+
+#Div_16 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 20%;
+    height: 100%;
+    /*border: 2px solid var(--cor-5);*/
+}
+
+#Div_17 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 60%;
+    height: 100%;
+    /*border: 2px solid var(--cor-5);*/
+}
+
+#Div_18{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-around;
+    width: 95%;
+}
+
+#Div_19{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 5%;
+}
+
+#Div_20{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 1.5%;
+    height: 80%;
+    margin: 1.5%;
+}
+
+#Div_21{
+    display: none;
+    flex-direction: column;
+    justify-content: start;
+    text-align: end;
+    align-items: end;
+    writing-mode: vertical-rl;
+    width: 50%;
+   /* background-color: var(--cor-5);
+    opacity: 80%;*/
+}
+
+.certo {
+    color: var(--cor-12);
+    writing-mode: vertical-rl;
+}
+.errado
+{
+    color: var(--cor-13);
+    writing-mode: vertical-rl;
+}
+.ichihan
+{
+    color: var(--cor-7);
+    writing-mode: vertical-rl;
+}
+.nihan
+{
+    color: var(--cor-8);
+    writing-mode: vertical-rl;
+}
+.sanhan
+{
+    color: var(--cor-9);
+    writing-mode: vertical-rl;
+}
+.rokuhan
+{
+    color: var(--cor-10);
+    writing-mode: vertical-rl;
+}
+.yakuman
+{
+    color: var(--cor-11);
+    writing-mode: vertical-rl;
+}
+
+#Div_22{
+    display: none;
+    flex-direction: column;
+    justify-content: start;
+    text-align: end;
+    align-items: end;
+    writing-mode: vertical-rl;
+    width: 50%;
+}
+
+#lista {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 80%;
+    height: 100%;
+    font-weight: 1000;
+    font-size: 20px;
+    color: var(--cor-15);
+    direction: rtl;
+    border: none;
+    background-color: var(--cor-2);
+    /*border: 5px double var(--cor-4);*/
+    border-radius: 10px;
+    /*box-shadow:
+    0px 2px 10px var(--cor-4);*/
+}
+
+#verificacao{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--cor-3);
+    background-color: var(--cor-4);
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 800;
+    width: 40%;
+    height: 40%;
+    box-shadow:
+    0px 2px 10px var(--cor-4),
+    0px 5px 20px var(--cor-4);
+}
+#verificacao:hover{
+    opacity: 90%;
+    box-shadow:
+    0px 2px 10px var(--cor-4),
+    0px 5px 20px var(--cor-4);
+    background-color: var(--cor-5);
+    color: var(--cor-4);
+}
+
+#define{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--cor-3);
+    background-color: var(--cor-4);
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 800;
+    width: 100%;
+    height: 80%;
+    box-shadow:
+    0px 2px 10px var(--cor-3),
+    0px 5px 40px var(--cor-4);
+}
+#define:hover{
+    box-shadow:
+    0px 2px 10px var(--cor-5),
+    0px 5px 40px var(--cor-4);
+    background-color: var(--cor-5);
+    color: var(--cor-4);
+}
+
+#cor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--cor-3);
+    background-color: var(--cor-5);
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 800;
+    width: 100%;
+    height: 80%;
+    box-shadow:
+    0px 2px 10px var(--cor-5),
+    0px 5px 40px var(--cor-4);
+}
+#cor:hover{
+    box-shadow:
+    0px 2px 10px var(--cor-3),
+    0px 5px 40px var(--cor-4);
+    background-color: var(--cor-3);
+    color: var(--cor-6);
+}
+
+.dora_box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 4%;
+    height: 95%;
+    overflow: hidden;
+    border: 1px solid var(--cor-15);
+    border-radius: 10px;
+}
+
+.dora_box select {
+    background: var(--cor-4);
+    background: transparent;
+    font-size: 18px;
+    text-indent: 0.01px;
+    text-overflow: "";
+    text-align: center;
+    border-radius: 10px;
+    width: 70%;
+    height: 40%;
+}
+
+#dora_text{
+    writing-mode: vertical-rl;  
+    font-size: 24px;
+    color: var(--cor-15);
+}
+
+#input_dora{
+    width: 60%;
+    color: var(--cor-15);
+    font-size: 20px;
+    font-weight: bold;
+    border: 1px solid var(--cor-15);
+    /* box-shadow: 
+    0px 2px 5px var(--cor-4),
+    0px 2px 10px var(--cor-4); */
+    box-shadow:
+    0px 2px 3px var(--cor-15);
+    writing-mode: vertical-rl;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+
+#input_dora:focus{
+    background-color: var(--cor-4);
+    outline: none;
+    border: none;
+    box-shadow:
+    0px 2px 3px var(--cor-4);
+}
+
+/*        */
+/* Textos */
+/*        */
+
+#Text_1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: var(--cor-15);
+    font-weight: bold;
+    font-size: 50px; 
+}
+
+#Text_2 {
+    color: var(--cor-15);
+    font-weight: bold;
+    font-size: 30px;
+}
+
+#Text_3 {
+    color: var(--cor-15);
+    font-weight: bold;
+    font-size: 30px;
+}
+
+#Text_4 {
+    color: var(--cor-15);
+    font-weight: bold;
+    font-size: 30px;
+}
+
+/*       */
+/* Peças */
+/*       */
+
+.tiles {
+    background-image: url(/MahjongTiles/Export/Black/Back.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    width: 84px;
+    height: 112px;
+    margin: 0.5%;
+    /* filter: drop-shadow(0px 2px 2px var(--cor-5)); */
+}
+
+.tiles img
+{
+    max-width: 90%; 
+    max-height: 90%; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.dora {
+    background-image: url(/MahjongTiles/Export/Black/Back.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    width: 84px;
+    height: 112px;
+    margin: 0.5%;
+    /* filter: drop-shadow(0px 2px 2px var(--cor-4)); */
+}
+
+.dora img
+{
+    max-width: 90%; 
+    max-height: 90%; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+#Kaze_1 {
+    src: url(/riichi-mahjong-tiles-master/Black/Ton.svg);
+}
+
+#Richi_1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 20%;
+    border: 2px solid var(--cor-14);
+    background-color: var(--cor-14);
+    border-radius: 10%;
+    box-shadow: 
+    0px 2px 5px var(--cor-14);
+}
+
+#Richi_2 {
+    width: 2.5%;
+    height: 50%;
+    border: 2px solid var(--cor-5);
+    border-radius: 100%;
+    background-color: var(--cor-4);
+}
+#Tile_1_animation{
+    animation: 1s animacao_1;
+}
+#Tile_2_animation{
+    animation: 1.1s animacao_1;
+}
+#Tile_3_animation{
+    animation: 1.2s animacao_1;
+}
+#Tile_4_animation{
+    animation: 1.3s animacao_1;
+}
+#Tile_5_animation{
+    animation: 1.4s animacao_1;
+}
+#Tile_6_animation{
+    animation: 1.5s animacao_1;
+}
+#Tile_7_animation{
+    animation: 1.6s animacao_1;
+}
+#Tile_8_animation{
+    animation: 1.7s animacao_1;
+}
+#Tile_9_animation{
+    animation: 1.8s animacao_1;
+}
+#Tile_10_animation{
+    animation: 1.9s animacao_1;
+}
+#Tile_11_animation{
+    animation: 2s animacao_1;
+}
+#Tile_12_animation{
+    animation: 2.1s animacao_1;
+}
+#Tile_13_animation{
+    animation: 2.2s animacao_1;
+}
+#Tile_14_animation{
+    animation: 3s animacao_1;
+}
+#Kaze_1_animation{
+    animation: 1s animacao_1;
+}
+#Kaze_2_animation{
+    animation: 1s animacao_1;
+}
+#Dora_1_animation{
+    animation: 1s animacao_3;
+}
+#Dora_2_animation{
+    animation: 1.2s animacao_3;
+}
+#Dora_3_animation{
+    animation: 1.4s animacao_3;
+}
+#Dora_4_animation{
+    animation: 1.6s animacao_3; 
+}
+#Dora_5_animation{
+    animation: 1.8s animacao_3;
+}
+#Dora_6_animation{
+    animation: 2s animacao_3; 
+}
+#Dora_7_animation{
+    animation: 2.2s animacao_3;
+}
+#uraDora_1_animation{
+    animation: 1s animacao_3;
+}
+#uraDora_2_animation{
+    animation: 1.2s animacao_3;
+}
+#uraDora_3_animation{
+    animation: 1.4s animacao_3;
+}
+#uraDora_4_animation{
+    animation: 1.6s animacao_3;
+}
+#uraDora_5_animation{
+    animation: 1.8s animacao_3;
+}
+#uraDora_6_animation{
+    animation: 2s animacao_3;
+}
+#uraDora_7_animation{
+    animation: 2.2s animacao_3;  
+}
+/*           */
+/* Animações */
+/*           */
+
+@keyframes textorgb {
+    100% {
+        /* Larger blur radius */
+        text-shadow:
+            0 0 4px var(--cor-3),
+            0 0 12px var(--cor-4),
+            0 0 20px var(--cor-4),
+            0 0 90px var(--cor-4),
+            0 0 100px var(--cor-4);
+    }
+
+    50% {
+        /* A slightly smaller blur radius */
+        text-shadow:
+            0 0 3px var(--cor-3),
+            0 0 11px var(--cor-4),
+            0 0 19px var(--cor-4),
+            0 0 89px var(--cor-4),
+            0 0 100px var(--cor-4);
+    }
+
+    0% {
+        /* A slightly smaller blur radius */
+        text-shadow:
+            0 0 2px var(--cor-3),
+            0 0 10px var(--cor-4),
+            0 0 18px var(--cor-4),
+            0 0 88px var(--cor-4),
+            0 0 100px var(--cor-4);
+    }
+}
+
+@keyframes animacao_1 {
+    from{
+        opacity: 0;
+        position: relative;
+        bottom: 300px;
+    }
+    to {
+        opacity: 1;
+        position: relative;
+        bottom: 0px;
+    }
+}
+
+@keyframes animacao_2 {
+    from{
+        position: relative;
+        bottom: 300px;
+    }
+    to {
+        position: relative;
+        bottom: 0px;
+    }
+}
+
+@keyframes animacao_3 {
+    from{
+        opacity: 0;
+        position: relative;
+        left: 300px;
+    }
+    to {
+        opacity: 1;
+        position: relative;
+        left: 0px;
+    }
+}
+
+.yaku_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    animation: 1s animacao_1;
+
+}
+
+.yakus_label {
+    color: var(--cor-5);
+    font-weight: 900;
+    font-size: 20px;
+    writing-mode: vertical-rl;
+}
+.yakus_label[for="yakuhai"],[for ="menzentsumo"],[for ="riichi"],[for ="pinfu"],[for ="tanyao"],[for ="iipeikou"],[for ="sanshoku"]{
+    color: var(--cor-7);
+    /*text-shadow: 
+    0px 1px 1px var(--cor-preta),
+    0px 2px 5px var(--cor-7),
+    0px 3px 5px var(--cor-7);*/
+}
+.yakus_label[for="ittsuu"],[for ="toitoi"],[for ="chiitoitsu"],[for ="chanta"],[for ="sanankou"],[for ="honroutou"],[for ="sankantsu"],[for ="shousangen"],[for ="sanshokudoukou"]{
+    color: var(--cor-8);
+   /* text-shadow: 
+    1px 1px 1px var(--cor-preta),
+    0px 2px 5px var(--cor-8),
+    0px 3px 5px var(--cor-8);*/
+}
+.yakus_label[for="honitsu"],[for ="ryanpeikou"],[for ="jyunchan"]{
+    color: var(--cor-9);
+   /* text-shadow: 
+    1px 1px 1px var(--cor-preta),
+    0px 2px 5px var(--cor-9),
+    0px 3px 5px var(--cor-9);*/
+}
+.yakus_label[for="chinitsu"]{
+    color: var(--cor-10);
+    /*text-shadow: 
+    1px 1px 1px var(--cor-preta),
+    0px 2px 5px var(--cor-10),
+    0px 3px 5px var(--cor-10);*/
+}
+.yakus_label[for="kokushimusou"],[for ="suuankou"],[for ="daisangen"],[for ="tsuuiisou"],[for ="ryuuiisou"],[for ="suushiihou"],[for ="chuurennpoutou"],[for ="chinnroutou"]{
+    color: var(--cor-11);
+   /* text-shadow: 
+    1px 1px 1px var(--cor-preta),
+    0px 2px 5px var(--cor-11),
+    0px 3px 5px var(--cor-11);*/
+}
+/* Hide inputs */
+.yakus_input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+/* Styles */
+.yakus_label {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.25, 0.25, 0.5, 1.9);
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 1.5rem;
+        height: 1.5rem;
+        background: transparent;
+        border-radius: 0.25rem;
+        z-index: -1;
+        /*transition: all 0.25s cubic-bezier(0.25, 0.25, 0.5, 1);*/
+        transition: all 0.25s cubic-bezier(0.25, 0.25, 0.5, 1);
+        input[type="radio"]+& {
+            border-radius: 2rem;
+        }
+    }
+}
+
+/* Checked */
+.yakus_input:checked+.yakus_label {
+    text-shadow: none;
+    color: var(--cor-5);
+    &::before {
+        width: 110%;
+        height: 102%;
+        background: var(--cor-4);
+        border: 0;
+        box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+        box-shadow:
+        0px 2px 10px var(--cor-5),
+        0px 5px 40px var(--cor-4);
+    }
+}
