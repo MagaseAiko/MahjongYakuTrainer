@@ -1,301 +1,437 @@
+<!DOCTYPE html>
 <html lang="ja-JP">
 
 <head>
-    <title>麻雀役トレーナー</title>
+    <title>麻雀役トレーナー - Riichi Mahjong Yaku Trainer</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive Riichi Mahjong Yaku trainer to help you learn and practice mahjong hands">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🀄</text></svg>">
 </head>
 
 <body>
-    <div id="Div_1">
-        <div id="Text_1">
-            <div id="SubText_1">麻雀</div>
-            <div id="SubText_2">の</div>
-            <div id="SubText_3">役</div>
-            <div id="SubText_4">トレーナー</div>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="main-title">
+                <span class="title-kanji">麻雀役トレーナー</span>
+                <span class="title-romaji">Mahjong Yaku Trainer</span>
+            </h1>
+            
+            <div class="header-stats">
+                <div class="stat-card">
+                    <div class="stat-value" id="score">0</div>
+                    <div class="stat-label">Score</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="streak">0</div>
+                    <div class="stat-label">Streak</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="accuracy">0%</div>
+                    <div class="stat-label">Accuracy</div>
+                </div>
+            </div>
+            
+            <div class="header-controls">
+                <button class="control-btn" id="theme-toggle" title="Toggle Theme">
+                    <span class="icon">🌙</span>
+                </button>
+                <button class="control-btn" id="settings-btn" title="Settings">
+                    <span class="icon">⚙️</span>
+                </button>
+            </div>
         </div>
-        <div id="Div_2">
-            <div id="Div_3">
-                <div id="Div_7">
-                    <div id="Div_9">
-                        <div id="Div_15">
-                            <div id="Text_2">
-                                場</br>風
-                            </div>
-                            <div class="tiles" id="Kaze_1_animation">
-                                <img class ="tiles_default" id="Kaze_1">
-                            </div>
-                        </div>
-                        <div id="Div_16">
-                            <div id="Text_3">
-                                自</br>風
-                            </div>
-                            <div class="tiles" id="Kaze_2_animation">
-                                <img class ="tiles_default" id="Kaze_2">
-                            </div>
-                        </div>
-                    </div>
-                    <div id="Div_10">
-                        <div id="Richi_1" style="visibility: hidden;">
-                            <div id="Richi_2" style="visibility: hidden;">
+    </header>
 
+    <!-- Main Game Container -->
+    <main class="main-container">
+        <!-- Game Board Section -->
+        <section class="game-board">
+            <!-- Game Context Info (compact) -->
+            <div class="game-context">
+                <div class="winds-dora-section">
+                    <div class="winds">
+                        <div class="wind-item">
+                            <span class="wind-label">場風</span>
+                            <img class="wind-tile" id="bakaze-tile" alt="場風">
+                        </div>
+                        <div class="wind-item">
+                            <span class="wind-label">自風</span>
+                            <img class="wind-tile" id="jikaze-tile" alt="自風">
+                        </div>
+                    </div>
+                    
+                    <div class="dora-compact" id="dora-section">
+                        <div class="dora-info">
+                            <span class="dora-label">ドラ</span>
+                            <div class="dora-tiles-compact" id="dora-indicators">
+                                <img class="dora-tile" id="dora-1" alt="ドラ1">
+                                <img class="dora-tile" id="dora-2" alt="ドラ2" style="display: none;">
+                                <img class="dora-tile" id="dora-3" alt="ドラ3" style="display: none;">
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div id="Div_8">
-                    <div id="Div_11">
-                        <div class="dora" id="Dora_1_animation">
-                            <img class="dora_default" id="Dora_1">
-                        </div>
-                        <div class="dora" id="Dora_2_animation">
-                            <img class="dora_default" id="Dora_2">
-                        </div>
-                        <div class="dora" id="Dora_3_animation">
-                            <img class="dora_default" id="Dora_3">
-                        </div>
-                        <div class="dora" id="Dora_4_animation">
-                            <img class="dora_default" id="Dora_4">
-                        </div>
-                        <div class="dora" id="Dora_5_animation">
-                            <img class="dora_default" id="Dora_5">
-                        </div>
-                        <div class="dora" id="Dora_6_animation">
-                            <img class="dora_default" id="Dora_6">
-                        </div>
-                        <div class="dora" id="Dora_7_animation">
-                            <img class="dora_default" id="Dora_7">
-                        </div>
-                    </div>
-                    <div id="Div_12">
-                        <div class="dora" id="uraDora_1_animation">
-                            <img class="dora_default" id="uraDora_1">
-                        </div>
-                        <div class="dora" id="uraDora_2_animation">
-                            <img class="dora_default" id="uraDora_2">
-                        </div>
-                        <div class="dora" id="uraDora_3_animation">
-                            <img class="dora_default" id="uraDora_3">
-                        </div>
-                        <div class="dora" id="uraDora_4_animation">
-                            <img class="dora_default" id="uraDora_4">
-                        </div>
-                        <div class="dora" id="uraDora_5_animation">
-                            <img class="dora_default" id="uraDora_5">
-                        </div>
-                        <div class="dora" id="uraDora_6_animation">
-                            <img class="dora_default" id="uraDora_6">
-                        </div>
-                        <div class="dora" id="uraDora_7_animation">
-                            <img class="dora_default" id="uraDora_7">
+                        
+                        <div class="riichi-indicator" id="riichi-indicator" style="display: none;">
+                            <span class="riichi-text">リーチ</span>
+                            <div class="riichi-stick"></div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="Div_4">
-                <div id="Div_13">
-                    <div class="tiles" id="Tile_1_animation">
-                        <img class="tiles_default" id="Tile_1">
+
+            <!-- Player Hand (main focus) -->
+            <div class="hand-display">
+                <div class="hand-tiles" id="hand-tiles">
+                    <img class="tile" id="tile-1" alt="牌1">
+                    <img class="tile" id="tile-2" alt="牌2">
+                    <img class="tile" id="tile-3" alt="牌3">
+                    <img class="tile" id="tile-4" alt="牌4">
+                    <img class="tile" id="tile-5" alt="牌5">
+                    <img class="tile" id="tile-6" alt="牌6">
+                    <img class="tile" id="tile-7" alt="牌7">
+                    <img class="tile" id="tile-8" alt="牌8">
+                    <img class="tile" id="tile-9" alt="牌9">
+                    <img class="tile" id="tile-10" alt="牌10">
+                    <img class="tile" id="tile-11" alt="牌11">
+                    <img class="tile" id="tile-12" alt="牌12">
+                    <img class="tile" id="tile-13" alt="牌13">
+                </div>
+                
+                <div class="winning-section">
+                    <div class="win-indicator">
+                        <span class="win-type" id="win-type">ツモ</span>
                     </div>
-                    <div class="tiles" id="Tile_2_animation">
-                        <img class="tiles_default" id="Tile_2">
-                    </div>
-                    <div class="tiles" id="Tile_3_animation">
-                        <img class="tiles_default" id="Tile_3">
-                    </div>
-                    <div class="tiles" id="Tile_4_animation">
-                        <img class="tiles_default" id="Tile_4">
-                    </div>
-                    <div class="tiles" id="Tile_5_animation">
-                        <img class="tiles_default" id="Tile_5">
-                    </div>
-                    <div class="tiles" id="Tile_6_animation">
-                        <img class="tiles_default" id="Tile_6">
-                    </div>
-                    <div class="tiles" id="Tile_7_animation">
-                        <img class="tiles_default" id="Tile_7">
-                    </div>
-                    <div class="tiles" id="Tile_8_animation">
-                        <img class="tiles_default" id="Tile_8">
-                    </div>
-                    <div class="tiles" id="Tile_9_animation">
-                        <img class="tiles_default" id="Tile_9">
-                    </div>
-                    <div class="tiles" id="Tile_10_animation">
-                        <img class="tiles_default" id="Tile_10">
-                    </div>
-                    <div class="tiles" id="Tile_11_animation">
-                        <img class="tiles_default" id="Tile_11">
-                    </div>
-                    <div class="tiles" id="Tile_12_animation">
-                        <img class="tiles_default" id="Tile_12">
-                    </div>
-                    <div class="tiles" id="Tile_13_animation">
-                        <img class="tiles_default" id="Tile_13">
+                    <img class="tile winning-tile" id="winning-tile" alt="和了牌">
+                </div>
+            </div>
+        </section>
+
+        <!-- Game Controls -->
+        <section class="game-controls">
+            <div class="action-panel">
+                <div class="selected-yaku" id="selected-yaku">
+                    <span class="selection-prompt">この手の役は？</span>
+                    <div class="yaku-tags" id="yaku-tags">
+                        <!-- Selected yaku will appear here as tags -->
                     </div>
                 </div>
-                <div id="Div_14">
-                    <div id="Div_17">
-                        <div id="Text_4">
-                            ツ</br>モ
+                
+                <div class="control-buttons">
+                    <button class="btn btn-primary" id="select-yaku-btn">
+                        <span class="btn-icon">🎯</span>
+                        <span class="btn-text">役を選択</span>
+                    </button>
+                    
+                    <div class="dora-input">
+                        <label for="dora-count">ドラ</label>
+                        <select id="dora-count">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5+</option>
+                        </select>
+                    </div>
+                    
+                    <button class="btn btn-success" id="submit-answer">
+                        <span class="btn-icon">✓</span>
+                        <span class="btn-text">提出</span>
+                    </button>
+                    
+                    <button class="btn btn-secondary" id="next-hand">
+                        <span class="btn-icon">→</span>
+                        <span class="btn-text">次の手牌</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Yaku Selection Modal -->
+    <div class="modal-overlay" id="yaku-modal" style="display: none;">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>役を選択してください</h2>
+                <button class="modal-close" id="close-yaku-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="yaku-search">
+                    <input type="text" id="yaku-search" placeholder="役名で検索..." autocomplete="off">
+                </div>
+                
+                <div class="yaku-categories">
+                    <!-- 1 Han Yaku -->
+                    <div class="yaku-category">
+                        <h3 class="category-header">1翻役</h3>
+                        <div class="yaku-grid">
+                            <label class="yaku-option" data-yaku="riichi">
+                                <input type="checkbox" name="yaku" value="riichi">
+                                <div class="yaku-info">
+                                    <span class="yaku-name">立直</span>
+                                    <span class="yaku-romaji">Riichi</span>
+                                </div>
+                                <span class="yaku-han">1翻</span>
+                            </label>
+                            <label class="yaku-option" data-yaku="menzentsumo">
+                                <input type="checkbox" name="yaku" value="menzentsumo">
+                                <div class="yaku-info">
+                                    <span class="yaku-name">門前清自模和</span>
+                                    <span class="yaku-romaji">Menzen Tsumo</span>
+                                </div>
+                                <span class="yaku-han">1翻</span>
+                            </label>
+                            <label class="yaku-option" data-yaku="pinfu">
+                                <input type="checkbox" name="yaku" value="pinfu">
+                                <div class="yaku-info">
+                                    <span class="yaku-name">平和</span>
+                                    <span class="yaku-romaji">Pinfu</span>
+                                </div>
+                                <span class="yaku-han">1翻</span>
+                            </label>
+                            <label class="yaku-option" data-yaku="tanyao">
+                                <input type="checkbox" name="yaku" value="tanyao">
+                                <div class="yaku-info">
+                                    <span class="yaku-name">断么九</span>
+                                    <span class="yaku-romaji">Tanyao</span>
+                                </div>
+                                <span class="yaku-han">1翻</span>
+                            </label>
+                            <label class="yaku-option" data-yaku="yakuhai">
+                                <input type="checkbox" name="yaku" value="yakuhai">
+                                <div class="yaku-info">
+                                    <span class="yaku-name">役牌</span>
+                                    <span class="yaku-romaji">Yakuhai</span>
+                                </div>
+                                <span class="yaku-han">1翻</span>
+                            </label>
+                            <label class="yaku-option" data-yaku="iipeikou">
+                                <input type="checkbox" name="yaku" value="iipeikou">
+                                <div class="yaku-info">
+                                    <span class="yaku-name">一盃口</span>
+                                    <span class="yaku-romaji">Iipeikou</span>
+                                </div>
+                                <span class="yaku-han">1翻</span>
+                            </label>
                         </div>
-                        <div class="tiles" id="Tile_14_animation">
-                            <img class="tiles_default" id="Tile_14">
+                    </div>
+
+                    <!-- 2 Han Yaku -->
+                    <div class="yaku-category">
+                        <h3 class="category-header">2翻役</h3>
+                        <div class="yaku-grid">
+                            <label class="yaku-option" data-yaku="sanshokudoujun">
+                                <input type="checkbox" name="yaku" value="sanshokudoujun">
+                                <div class="yaku-info">
+                                    <span class="yaku-name">三色同順</span>
+                                    <span class="yaku-romaji">Sanshoku Doujun</span>
+                                </div>
+                                <span class="yaku-han">2翻</span>
+                            </label>
+                            <label class="yaku-option" data-yaku="ittsuu">
+                                <input type="checkbox" name="yaku" value="ittsuu">
+                                <div class="yaku-info">
+                                    <span class="yaku-name">一気通貫</span>
+                                    <span class="yaku-romaji">Ittsu</span>
+                                </div>
+                                <span class="yaku-han">2翻</span>
+                            </label>
+                            <label class="yaku-option" data-yaku="chiitoitsu">
+                                <input type="checkbox" name="yaku" value="chiitoitsu">
+                                <div class="yaku-info">
+                                    <span class="yaku-name">七対子</span>
+                                    <span class="yaku-romaji">Chiitoitsu</span>
+                                </div>
+                                <span class="yaku-han">2翻</span>
+                            </label>
+                            <label class="yaku-option" data-yaku="toitoi">
+                                <input type="checkbox" name="yaku" value="toitoi">
+                                <div class="yaku-info">
+                                    <span class="yaku-name">対々和</span>
+                                    <span class="yaku-romaji">Toitoi</span>
+                                </div>
+                                <span class="yaku-han">2翻</span>
+                            </label>
+                            <label class="yaku-option" data-yaku="sanankou">
+                                <input type="checkbox" name="yaku" value="sanankou">
+                                <div class="yaku-info">
+                                    <span class="yaku-name">三暗刻</span>
+                                    <span class="yaku-romaji">Sanankou</span>
+                                </div>
+                                <span class="yaku-han">2翻</span>
+                            </label>
+                            <label class="yaku-option" data-yaku="sankantsu">
+                                <input type="checkbox" name="yaku" value="sankantsu">
+                                <div class="yaku-info">
+                                    <span class="yaku-name">三槓子</span>
+                                    <span class="yaku-romaji">Sankantsu</span>
+                                </div>
+                                <span class="yaku-han">2翻</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Higher Han Yaku -->
+                    <div class="yaku-category">
+                        <h3 class="category-header">3翻役以上</h3>
+                        <div class="yaku-grid">
+                            <label class="yaku-option" data-yaku="honitsu">
+                                <input type="checkbox" name="yaku" value="honitsu">
+                                <div class="yaku-info">
+                                    <span class="yaku-name">混一色</span>
+                                    <span class="yaku-romaji">Honitsu</span>
+                                </div>
+                                <span class="yaku-han">3翻</span>
+                            </label>
+                            <label class="yaku-option" data-yaku="junchan">
+                                <input type="checkbox" name="yaku" value="junchan">
+                                <div class="yaku-info">
+                                    <span class="yaku-name">純全帯么九</span>
+                                    <span class="yaku-romaji">Junchan</span>
+                                </div>
+                                <span class="yaku-han">3翻</span>
+                            </label>
+                            <label class="yaku-option" data-yaku="ryanpeikou">
+                                <input type="checkbox" name="yaku" value="ryanpeikou">
+                                <div class="yaku-info">
+                                    <span class="yaku-name">二盃口</span>
+                                    <span class="yaku-romaji">Ryanpeikou</span>
+                                </div>
+                                <span class="yaku-han">3翻</span>
+                            </label>
+                            <label class="yaku-option" data-yaku="chinitsu">
+                                <input type="checkbox" name="yaku" value="chinitsu">
+                                <div class="yaku-info">
+                                    <span class="yaku-name">清一色</span>
+                                    <span class="yaku-romaji">Chinitsu</span>
+                                </div>
+                                <span class="yaku-han">6翻</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Yakuman -->
+                    <div class="yaku-category">
+                        <h3 class="category-header">役満</h3>
+                        <div class="yaku-grid">
+                            <label class="yaku-option" data-yaku="kokushimusou">
+                                <input type="checkbox" name="yaku" value="kokushimusou">
+                                <div class="yaku-info">
+                                    <span class="yaku-name">国士無双</span>
+                                    <span class="yaku-romaji">Kokushi Musou</span>
+                                </div>
+                                <span class="yaku-han">役満</span>
+                            </label>
+                            <label class="yaku-option" data-yaku="suuankou">
+                                <input type="checkbox" name="yaku" value="suuankou">
+                                <div class="yaku-info">
+                                    <span class="yaku-name">四暗刻</span>
+                                    <span class="yaku-romaji">Suuankou</span>
+                                </div>
+                                <span class="yaku-han">役満</span>
+                            </label>
+                            <label class="yaku-option" data-yaku="daisangen">
+                                <input type="checkbox" name="yaku" value="daisangen">
+                                <div class="yaku-info">
+                                    <span class="yaku-name">大三元</span>
+                                    <span class="yaku-romaji">Daisangen</span>
+                                </div>
+                                <span class="yaku-han">役満</span>
+                            </label>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="Div_5">
-                <div id="Div_20">
-                    <button id="define">次</button>
-                    <button id="cor">色</button>
-                </div>
-                <fieldset id="lista">
-                    <legend>役リスト</legend>
-                    <div id="Div_18">
-                        <div class="yaku_box">
-                            <input type="checkbox" class="yakus_input" id="yakuhai" name="yakuhai" />
-                            <label class="yakus_label" for="yakuhai">役牌「やくはい」</label>
-                        </div>
-                        <div class="yaku_box">
-                            <input type="checkbox" class="yakus_input" id="menzentsumo" name="menzentsumo" />
-                            <label class="yakus_label" for="menzentsumo">門前清自模和「メンゼンツモ」</label>
-                        </div>
-                        <div class="yaku_box">
-                            <input type="checkbox" class="yakus_input" id="riichi" name="riichi" />
-                            <label class="yakus_label" for="riichi">立直「リーチ」</label>
-                        </div>
-                        <div class="yaku_box">
-                            <input type="checkbox" class="yakus_input" id="pinfu" name="pinfu" />
-                            <label class="yakus_label" for="pinfu">平和「ピンフ」</label>
-                        </div>
-                        <div class="yaku_box">
-                            <input type="checkbox" class="yakus_input" id="tanyao" name="tanyao" />
-                            <label class="yakus_label" for="tanyao">断么九「タンヤオ」</label>
-                        </div>
-                        <div class="yaku_box">
-                            <input type="checkbox" class="yakus_input" id="iipeikou" name="iipeikou" />
-                            <label class="yakus_label" for="iipeikou">一盃口「イーペーコー」</label>
-                        </div>
-                        <div class="yaku_box">
-                            <input type="checkbox" class="yakus_input" id="sanshoku" name="sanshoku" />
-                            <label class="yakus_label" for="sanshoku">三色同順「サンショク」</label>
-                        </div>
-                        <div class="yaku_box">
-                            <input type="checkbox" class="yakus_input" id="ittsuu" name="ittsuu" />
-                            <label class="yakus_label" for="ittsuu">一気通貫「イッツウ」</label>
-                        </div>
-                        <div class="yaku_box">
-                            <input type="checkbox" class="yakus_input" id="toitoi" name="toitoi" />
-                            <label class="yakus_label" for="toitoi">対々和「トイトイ」</label>
-                        </div>
-                        <div class="yaku_box">
-                            <input type="checkbox" class="yakus_input" id="chiitoitsu" name="chiitoitsu" />
-                            <label class="yakus_label" for="chiitoitsu">七対子「チートイツ」</label>
-                        </div>
-                        <div class="yaku_box">
-                            <input type="checkbox" class="yakus_input" id="chanta" name="chanta" />
-                            <label class="yakus_label" for="chanta">混全帯么九「チャンタ」</label>
-                        </div>
-                        <div class="yaku_box">
-                            <input type="checkbox" class="yakus_input" id="sanankou" name="sanankou" />
-                            <label class="yakus_label" for="sanankou">三暗刻「サンアンコー」</label>
-                        </div>
-                        <div class="yaku_box">
-                            <input type="checkbox" class="yakus_input" id="honroutou" name="honroutou" />
-                            <label class="yakus_label" for="honroutou">混老頭「ホンロートー」</label>
-                        </div>
-                        <div class="yaku_box">
-                            <input type="checkbox" class="yakus_input" id="sankantsu" name="sankantsu" />
-                            <label class="yakus_label" for="sankantsu">三槓子「サンカンツ」</label>
-                        </div>
-                        <div class="yaku_box">
-                            <input type="checkbox" class="yakus_input" id="shousangen" name="shousangen" />
-                            <label class="yakus_label" for="shousangen">小三元「ショウサンゲン」</label>
-                        </div>
-                        <div class="yaku_box">
-                            <input type="checkbox" class="yakus_input" id="sanshokudoukou" name="sanshokudoukou" />
-                            <label class="yakus_label" for="sanshokudoukou">三色同刻「サンショクドーコー」</label>
-                        </div>
-                        <div class="yaku_box">
-                            <input type="checkbox" class="yakus_input" id="honitsu" name="honitsu" />
-                            <label class="yakus_label" for="honitsu">混一色「ホンイツ」</label>
-                        </div>
-                        <div class="yaku_box">
-                            <input type="checkbox" class="yakus_input" id="ryanpeikou" name="ryanpeikou" />
-                            <label class="yakus_label" for="ryanpeikou">二盃口「リャンペーコー」</label>
-                        </div>
-                        <div class="yaku_box">
-                            <input type="checkbox" class="yakus_input" id="jyunchan" name="jyunchan" />
-                            <label class="yakus_label" for="jyunchan">純全帯么九「ジュンチャン」</label>
-                        </div>
-                        <div class="yaku_box">
-                            <input type="checkbox" class="yakus_input" id="chinitsu" name="chinitsu" />
-                            <label class="yakus_label" for="chinitsu">清一色「チンイツ」</label>
-                        </div>
-                        <div class="yaku_box">
-                            <input type="checkbox" class="yakus_input" id="kokushimusou" name="kokushimusou" />
-                            <label class="yakus_label" for="kokushimusou">国士無双「コクシムソウ」</label>
-                        </div>
-                        <div class="yaku_box">
-                            <input type="checkbox" class="yakus_input" id="suuankou" name="suuankou" />
-                            <label class="yakus_label" for="suuankou">四暗刻「スーアンコー」</label>
-                        </div>
-                        <div class="yaku_box">
-                            <input type="checkbox" class="yakus_input" id="daisangen" name="daisangen" />
-                            <label class="yakus_label" for="daisangen">大三元「ダイサンゲン」</label>
-                        </div>
-                        <div class="yaku_box">
-                            <input type="checkbox" class="yakus_input" id="tsuuiisou" name="tsuuiisou" />
-                            <label class="yakus_label" for="tsuuiisou">字一色「ツーイーソー」</label>
-                        </div>
-                        <div class="yaku_box">
-                            <input type="checkbox" class="yakus_input" id="ryuuiisou" name="ryuuiisou" />
-                            <label class="yakus_label" for="ryuuiisou">緑一色「リューイーソー」</label>
-                        </div>
-                        <div class="yaku_box">
-                            <input type="checkbox" class="yakus_input" id="suushiihou" name="suushiihou" />
-                            <label class="yakus_label" for="suushiihou">四喜和「スーシーホー」</label>
-                        </div>
-                        <div class="yaku_box">
-                            <input type="checkbox" class="yakus_input" id="chuurennpoutou" name="chuurennpoutou" />
-                            <label class="yakus_label" for="chuurennpoutou">九蓮宝燈「チューレンポートー」</label>
-                        </div>
-                        <div class="yaku_box">
-                            <input type="checkbox" class="yakus_input" id="chinnroutou" name="chinnroutou" />
-                            <label class="yakus_label" for="chinnroutou">清老頭「チンロートー」</label>
-                        </div>
-                        <div class="dora_box">
-                            <div id="dora_text">ドラ数</div>
-                                <select id="input_dora">
-                                    <option value= "0">ゼロ</option>
-                                    <option value= "1">一</option>
-                                    <option value= "2">二</option>
-                                    <option value= "3">三</option>
-                                    <option value= "4">四</option>
-                                    <option value= "5">五</option>
-                                    <option value= "6">六</option>
-                                    <option value= "7">七</option>
-                                    <option value= "8">八</option>
-                                    <option value= "9">九</option>
-                                    <option value= "10">十</option>
-                                </select>
-                            </div>
-                    </div>
-                    <div id="Div_21">
-                    </div>
-                    <div id="Div_22">
-                    </div>
-                    <div id="Div_19">
-                        <button id="verificacao" type="submit">送る</button>
-                    </div>
-                </fieldset>
-            </div>
-            <div id="Div_6">
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="clear-yaku-selection">クリア</button>
+                <button class="btn btn-primary" id="confirm-yaku-selection">確定</button>
             </div>
         </div>
     </div>
+
+    <!-- Results Modal -->
+    <div class="modal-overlay" id="results-modal" style="display: none;">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="result-title">結果</h2>
+                <button class="modal-close" id="close-results-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="result-comparison">
+                    <div class="answer-section">
+                        <h3>あなたの答え</h3>
+                        <div class="answer-display" id="user-answer"></div>
+                    </div>
+                    <div class="answer-section">
+                        <h3>正解</h3>
+                        <div class="answer-display" id="correct-answer"></div>
+                    </div>
+                </div>
+                
+                <div class="score-display">
+                    <div class="score-item">
+                        <span class="score-label">獲得スコア</span>
+                        <span class="score-value" id="round-score">+0</span>
+                    </div>
+                </div>
+                
+                <div class="explanation" id="explanation-section" style="display: none;">
+                    <h3>解説</h3>
+                    <div class="explanation-content" id="explanation-text"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="continue-game">次の問題へ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div class="modal-overlay" id="settings-modal" style="display: none;">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>設定</h2>
+                <button class="modal-close" id="close-settings-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="setting-group">
+                    <label for="difficulty-select">難易度</label>
+                    <select id="difficulty-select">
+                        <option value="easy">初級 (基本役のみ)</option>
+                        <option value="medium">中級 (一般的な役)</option>
+                        <option value="hard">上級 (すべての役)</option>
+                    </select>
+                </div>
+                
+                <div class="setting-group">
+                    <label for="language-select">表示言語</label>
+                    <select id="language-select">
+                        <option value="jp">日本語</option>
+                        <option value="romaji">ローマ字 (Romaji)</option>
+                        <option value="mixed">混合表示</option>
+                    </select>
+                </div>
+                
+                <div class="setting-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="timer-toggle">
+                        <span class="checkmark"></span>
+                        制限時間を有効にする (60秒)
+                    </label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="save-settings">保存</button>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 
